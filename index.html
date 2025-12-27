@@ -14,41 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
-        
-        /* تنسيق حقل التاريخ ليناسب الهواتف */
-input[type="date"] {
-    position: relative;
-    text-align: right;
-    direction: rtl;
-}
-
-/* تخصيص أيقونة التقويم لتظهر بشكل لائق */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    bottom: 0;
-    color: transparent;
-    cursor: pointer;
-    height: auto;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
-}
-
-/* إضافة أيقونة تقويم وهمية جهة اليسار للتنبيه */
-input[type="date"]::after {
-    content: "\f133"; /* كود أيقونة التقويم من FontAwesome */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #0d6efd;
-    pointer-events: none;
-}
-
         /* =======================================
            التنسيقات المخصصة (CSS)
            ======================================= */
@@ -252,7 +217,7 @@ input[type="date"]::after {
 
         .submit-btn:hover {
             background-color: #218838;
-        }        
+        }
         
         .icon-img {
             max-width: 80px;
@@ -262,19 +227,19 @@ input[type="date"]::after {
         /* تنسيقات الإحصائيات */
         .stats-section {
             padding: 40px 0;
-            background-color: #DADADA;
+            background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
         .stats-section h2 {
-            color: #black;
+            color: #0d6efd;
             font-weight: bold;
         }
 
         .stats-section p {
-            color: #046202;
+            color: #6c757d;
         }
 
         .stat-item {
@@ -347,20 +312,18 @@ input[type="date"]::after {
             align-items: center;
         }
         
-      .btn-whatsapp-custom {
-    background-color: #0d6efd; /* لون أزرق (Bootstrap Primary) */
-    border: none;
-    color: #ffffff; /* نص بلون أبيض ليتناسب مع الأزرق */
-    font-weight: 800;
-    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
-    transition: all 0.3s ease;
-}
-
-.btn-whatsapp-custom:hover {
-    background-color: #0b5ed7; /* درجة أزرق أغمق عند التمرير */
-    color: #ffffff;
-    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
-}
+        /* تنسيق زر الواتساب الجديد */
+        .btn-whatsapp-custom {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-whatsapp-custom:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -495,44 +458,27 @@ input[type="date"]::after {
                             <textarea id="agreement-details" name="تفاصيل_الاتفاق" placeholder="تفاصيل الاتفاق" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="baptism-period">مدة التعميد بالايام</label>
+                            <label for="baptism-period">مدة التعميد بالايام *</label>
                             <input type="number" id="baptism-period" name="مدة_التعميد_بالايام" placeholder="عدد الأيام" class="form-control" required>
                         </div>
-                        <<div class="form-group">
-    <label for="theDayTheBaptismEnded">تاريخ انتهاء التعميد *</label>
-    <input type="date" id="theDayTheBaptismEnded" name="يوم_انتهاء_التعميد" class="form-control" required>
-</div>
-
+                        <div class="form-group">
+                            <label for="theDayTheBaptismEnded">يوم انتهاء التعميد *</label>
+                            <input type="text" id="theDayTheBaptismEnded" name="يوم_انتهاء_التعميد" placeholder="dd/mm/yyyy" class="form-control" required>
+                        </div>
                     </div>
 
-                 <div class="container p-0">
-    <div class="service-price row">
-        <div class="form-group col-md-6">
-            <label for="servicePrice">مبلغ التعميد (ريال) *</label>
-            <input type="number" id="servicePrice" name="مبلغ_التعميد_ريال" placeholder="أدخل مبلغ الاتفاق" class="form-control" required>
-            
-            <div class="mt-3 p-3 bg-light rounded border">
-                <div class="d-flex justify-content-between">
-                    <span>رسوم المنصة:</span>
-                    <span id="platformFee">0</span> ريال
-                </div>
-                <div class="d-flex justify-content-between fw-bold text-success mt-2">
-                    <span>إجمالي المبلغ المستحق:</span>
-                    <span id="totalAmount">0</span> ريال
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 text-right">
-            <h5 class="section-title"> سياسة الرسوم : </h5>
-            <ul class="small text-muted">
-                <li>50 ريال للمبالغ من 1 إلى 500 ريال.</li>
-                <li>100 ريال للمبالغ من 501 إلى 3000 ريال.</li>
-                <li>3% للمبالغ التي تتجاوز 3000 ريال.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
+                    <div class="container p-0">
+                        <div class="service-price row">
+                            <div class="form-group col-md-6">
+                                <label for="servicePrice">مبلغ التعميد *</label>
+                                <input type="number" id="servicePrice" name="مبلغ_التعميد_ريال" placeholder="سعر الخدمة" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <h5 class="section-title"> رسوم الخدمة : </h5>
+                                <p>50 ريال للمبلغ 500 ريال أو اقل .. <br> 100 ريال للمبلغ 3000 ريال أو اقل .. <br> 3% من مبلغ التعميد اذا اكثر من 3000 ريال .. </p>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-section">
                         <h3>4- طريقة الدفع</h3>
@@ -551,30 +497,23 @@ input[type="date"]::after {
                             </div>
                         </div>
                     </div>
-                   <button type="submit" class="submit-btn mb-3">إتمام فتح التعميد عبر الإيميل</button>                   
-
-<button type="button" id="whatsappSubmit" class="btn btn-whatsapp-custom w-100 p-2" style="border-radius: 8px; font-size: 1.1rem;">
-    <i class="fab fa-whatsapp me-2"></i> إرسال تفاصيل التعميد عبر الواتساب
-</button>
+                    <button type="submit" class="submit-btn">إتمام فتح التعميد</button>
                 </form>
             </div>
         </div>
 
-      <div id="contact-us" class="row mt-5">
-    <div class="col-md-12 text-center">
-        <h2 class="section-title">للتواصل المباشر والاستفسارات</h2>
-        <p class="lead">يمكنك التواصل مباشرة مع فريق الدعم الفني أو فريق التعميد عبر الواتساب للرد الفوري على استفساراتك.</p>
-        
-        <a href="https://wa.me/966576735113" target="_blank" class="btn btn-lg mt-3 btn-whatsapp-custom">
-            <i class="fab fa-whatsapp me-2"></i> تواصل عبر الواتساب الآن
-        </a>
-        
-        <p class="mt-3">للدعم الفني والاستفسارات: 
-            <a href="https://wa.me/966576735113" target="_blank" style="text-decoration: none; color: #0d6efd;">966576735113</a> 
-        </p>
-        <p>لمتابعة طلبات التعميد: سيتم إنشاء مجموعة خاصة بك فور إتمامك لطلب فتح التعميد.</p>
-    </div>
-</div>
+        <div id="contact-us" class="row mt-5">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">للتواصل المباشر والاستفسارات</h2>
+                <p class="lead">يمكنك التواصل مباشرة مع فريق الدعم الفني أو فريق التعميد عبر الواتساب للرد الفوري على استفساراتك.</p>
+                <a href="https://wa.me/966576735113" target="_blank" class="btn btn-lg mt-3 btn-whatsapp-custom">
+                    <i class="fab fa-whatsapp me-2"></i> تواصل عبر الواتساب الآن
+                </a>
+                <p class="mt-3">للدعم الفني والاستفسارات: <a href="https://wa.me/966576735113" target="_blank" style="text-decoration: none; color: #0d6efd;">966576735113</a> 
+                <p>لمتابعة طلبات التعميد: سيتم إنشاء مجموعة خاصة بك فور إتمامك لطلب فتح التعميد.</p>
+            </div>
+        </div>
+
         <div class="row mt-4">
             <div class="col-md-4 text-center">
                 <img src="https://minasatwasitsuadi.com/assets/%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D8%AF%D9%88%D9%86%20%D8%B9%D9%86%D9%88%D8%A7%D9%86%20(8).png" alt="الرؤية" class="img-fluid icon-img">
@@ -734,7 +673,7 @@ input[type="date"]::after {
             });
         });
 
-        
+        form.classList.add('was-validated');
     }
 
     /* =======================================
@@ -798,96 +737,6 @@ input[type="date"]::after {
 
     // ابدأ العد عندما تصبح الصفحة جاهزة بالكامل
     window.addEventListener('load', startCounters);
-    /* /* =======================================
-   1. منطق الحساب التلقائي للرسوم
-   ======================================= */
-function calculateFees(amount) {
-    let fee = 0;
-    if (amount > 0 && amount <= 500) {
-        fee = 50;
-    } else if (amount > 500 && amount <= 3000) {
-        fee = 100;
-    } else if (amount > 3000) {
-        fee = amount * 0.03;
-    }
-    return fee;
-}
-
-document.getElementById('servicePrice').addEventListener('input', function() {
-    const amount = parseFloat(this.value) || 0;
-    const fee = calculateFees(amount);
-
-    document.getElementById('platformFee').textContent = fee.toLocaleString();
-    document.getElementById('totalAmount').textContent = (amount + fee).toLocaleString();
-});
-
-/* =======================================
-   2. منطق الربط بالواتساب (المعدل)
-   ======================================= */
-document.getElementById('whatsappSubmit').addEventListener('click', function() {
-    const form = document.getElementById('baptismForm');
-    
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-
-    // جلب القيم
-    const requesterName = document.getElementById('requester-name').value;
-    const requesterPhone = document.getElementById('requester-id').value;
-    const providerName = document.getElementById('provider-name').value;
-    const providerPhone = document.getElementById('provider-id').value;
-    const agreement = document.getElementById('agreement-details').value;
-    const period = document.getElementById('baptism-period').value;
-    const endDate = document.getElementById('theDayTheBaptismEnded').value;
-    const price = parseFloat(document.getElementById('servicePrice').value) || 0;
-    
-    // حساب الرسوم هنا لضمان دقتها في الرسالة
-    const fee = calculateFees(price);
-    const total = price + fee;
-    
-    const paymentMethod = document.querySelector('input[name="طريقة_الدفع"]:checked')?.value || "غير محدد";
-    const myNumber = "966576735113"; 
-
-    const message = `*طلب فتح تعميد جديد* 📄%0A%0A` +
-                    `*1- بيانات صاحب الطلب:*%0A` +
-                    `• الاسم: ${requesterName}%0A` +
-                    `• الجوال: ${requesterPhone}%0A%0A` +
-                    `*2- بيانات مقدم الخدمة:*%0A` +
-                    `• الاسم: ${providerName}%0A` +
-                    `• الجوال: ${providerPhone}%0A%0A` +
-                    `*3- تفاصيل الاتفاق:*%0A` +
-                    `• الوصف: ${agreement}%0A` +
-                    `• المدة: ${period} أيام%0A` +
-                    `• تاريخ الانتهاء: ${endDate}%0A%0A` +
-                    `*4- المالية والدفع:*%0A` +
-                    `• مبلغ التعميد: ${price} ريال%0A` +
-                    `• رسوم المنصة: ${fee} ريال%0A` +
-                    `• الإجمالي المطلوب: ${total} ريال%0A` +
-                    `• طريقة الدفع: ${paymentMethod}%0A%0A` +
-                    `*تم الإرسال عبر منصة تعميد*`;
-
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${myNumber}&text=${message}`;
-
-    Swal.fire({
-        title: 'تم تجهيز طلبك بنجاح', 
-        html: '<span style="color: #007000; font-weight: bold;">جاري تحويلك الآن للواتساب لإتمام الإجراءات...</span>',
-        icon: 'success', 
-        showConfirmButton: false, 
-        timer: 2000,
-        timerProgressBar: true,
-        allowOutsideClick: false
-    }).then(() => {
-        // استخدام window.location لتحويل الصفحة مباشرة وهو الأضمن للهواتف
-        window.location.href = whatsappUrl;
-        
-        // إعادة تعيين النموذج
-        form.reset();
-        form.classList.remove('was-validated');
-        document.getElementById('platformFee').textContent = "0";
-        document.getElementById('totalAmount').textContent = "0";
-    });
-});
     </script>
 </body>
 </html>
