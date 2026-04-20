@@ -525,99 +525,77 @@ input[type="date"]::after {
 
             <div class="col-md-6 text-right">
                 <h2 class="section-title text-right">طلب إعتماد خدمة</h2>
-             <form id="baptismForm" novalidate action="https://formspree.io/f/xjgjodbb" method="POST">
-    <input type="hidden" name="التقرير_الكامل" id="formattedMessage">
-                                                                                           
-                    
-                    <div class="form-section">
-                        <h3>1- بيانات صاحب الطلب</h3>
-                        <div class="form-group">
-                            <label for="requester-name">اسم صاحب الطلب *</label>
-                            <input type="text" id="requester-name" name="اسم صاحب الطلب" placeholder="اسم صاحب الطلب" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="requester-id">رقم صاحب الطلب *</label>
-                            <input type="tel" id="requester-id" name="رقم صاحب الطلب واتساب" placeholder="مثال: 966500000000" class="form-control" required pattern="[0-9]+">
-                        </div>
-                    </div>
+             <form id="baptismForm" novalidate action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="c4a88d20-5588-4b2d-b6b5-80f5897683b5">
+    <input type="hidden" name="subject" value="طلب تعميد جديد - منصة تعميد">
+    <input type="hidden" name="from_name" value="منصة تعميد">
+    
+    <input type="hidden" name="Full_Report" id="formattedMessage">
+    
+    <input type="checkbox" name="botcheck" style="display: none;">
 
-                    <div class="form-section">
-                        <h3>2- بيانات مقدم الخدمة</h3>
-                        <div class="form-group">
-                            <label for="provider-name">اسم مقدم الخدمة *</label>
-                            <input type="text" id="provider-name" name="اسم مقدم الخدمة" placeholder="اسم مقدم الخدمة" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="provider-id">رقم مقدم الخدمة *</label>
-                            <input type="tel" id="provider-id" name="رقم مقدم الخدمة واتساب" placeholder="مثال: 966500000000" class="form-control" required pattern="[0-9]+">
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h3>3- تفاصيل الاتفاق</h3>
-                        <div class="form-group">
-                            <label for="agreement-details">تفاصيل الاتفاق *</label>
-                            <textarea id="agreement-details" name="تفاصيل الاتفاق" placeholder="تفاصيل الاتفاق" class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="baptism-period">مدة التعميد بالايام</label>
-                            <input type="number" id="baptism-period" name="مدة التعميد بالايام" placeholder="عدد الأيام" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-    <label for="theDayTheBaptismEnded">تاريخ انتهاء التعميد *</label>
-    <input type="date" id="theDayTheBaptismEnded" name="يوم انتهاء التعميد" class="form-control" required>
-</div>
-
-                    </div>
-
-                 <div class="container p-0">
-    <div class="service-price row">
-        <div class="form-group col-md-6">
-            <label for="servicePrice">مبلغ التعميد (ريال) *</label>
-            <input type="number" id="servicePrice" name="مبلغ التعميد ريال" placeholder="أدخل مبلغ الاتفاق" class="form-control" required>
-            
-            <div class="mt-3 p-3 bg-light rounded border">
-                <div class="d-flex justify-content-between">
-                    <span>رسوم المنصة:</span>
-                    <span id="platformFee">0</span> ريال
-                </div>
-                <div class="d-flex justify-content-between fw-bold text-success mt-2">
-                    <span>إجمالي المبلغ المستحق:</span>
-                    <span id="totalAmount">0</span> ريال
-                </div>
-            </div>
+    <div class="form-section">
+        <h3>1- بيانات صاحب الطلب</h3>
+        <div class="form-group">
+            <label for="requester-name">اسم صاحب الطلب *</label>
+            <input type="text" id="requester-name" class="form-control" required>
         </div>
-        <div class="col-md-6 text-right">
-            <h5 class="section-title"> سياسة الرسوم : </h5>
-            <ul class="small text-muted">
-                <li>50 ريال للمبالغ من 1 إلى 500 ريال.</li>
-                <li>100 ريال للمبالغ من 501 إلى 3000 ريال.</li>
-                <li>3% للمبالغ التي تتجاوز 3000 ريال.</li>
-            </ul>
+        <div class="form-group">
+            <label for="requester-id">رقم صاحب الطلب (واتساب) *</label>
+            <input type="tel" id="requester-id" placeholder="966500000000" class="form-control" required pattern="[0-9]+">
         </div>
     </div>
-</div>
 
+    <div class="form-section">
+        <h3>2- بيانات مقدم الخدمة</h3>
+        <div class="form-group">
+            <label for="provider-name">اسم مقدم الخدمة *</label>
+            <input type="text" id="provider-name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="provider-id">رقم مقدم الخدمة (واتساب) *</label>
+            <input type="tel" id="provider-id" placeholder="966500000000" class="form-control" required pattern="[0-9]+">
+        </div>
+    </div>
 
-                    <div class="form-section">
-                        <h3>4- طريقة الدفع</h3>
-                        <div class="form-group">
-                            <label>طريقة الدفع *</label>
-                            <div class="payment-options">
-                                <label><input type="radio" name="طريقة الدفع" value="تحويل بنكي" required> تحويل بنكي</label>
-                                <label><input type="radio" name="طريقة الدفع" value="بطاقة ائتمانية"> بطاقة ائتمانية</label>
-                                <label><input type="radio" name="طريقة الدفع" value="بطاقة مدى"> بطاقة مدى</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="d-flex terms">
-                                <input type="checkbox" id="agree-terms" class="ms-2" required>
-                                <label for="agree-terms">أوافق على الشروط والأحكام *</label>
-                            </div>
-                        </div>
-                    </div>
-                   <button type="submit" class="submit-btn mb-3">إتمام فتح التعميد عبر الإيميل</button>                   
+    <div class="form-section">
+        <h3>3- تفاصيل الاتفاق</h3>
+        <div class="form-group">
+            <label for="agreement-details">تفاصيل الاتفاق *</label>
+            <textarea id="agreement-details" class="form-control" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="theDayTheBaptismEnded">تاريخ انتهاء التعميد *</label>
+            <input type="date" id="theDayTheBaptismEnded" class="form-control" required>
+        </div>
+    </div>
 
+    <div class="form-group">
+        <label for="servicePrice">مبلغ التعميد (ريال) *</label>
+        <input type="number" id="servicePrice" class="form-control" required>
+        
+        <div class="mt-3 p-3 bg-light rounded border text-right">
+            <div>رسوم المنصة: <span id="platformFee">0</span> ريال</div>
+            <div class="fw-bold text-success">الإجمالي: <span id="totalAmount">0</span> ريال</div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>4- الدفع والموافقة</h3>
+        <div class="form-group">
+            <div class="payment-options">
+                <label class="me-3"><input type="radio" name="pay_method" value="تحويل بنكي" checked> تحويل بنكي</label>
+                <label class="me-3"><input type="radio" name="pay_method" value="بطاقة مدى"> مدى</label>
+            </div>
+        </div>
+        <div class="d-flex align-items-center mt-3">
+            <input type="checkbox" id="agree-terms" class="ms-2" required>
+            <label for="agree-terms">أوافق على كافة الشروط والأحكام</label>
+        </div>
+    </div>
+
+    <button type="submit" class="submit-btn mb-3">إرسال الطلب رسمياً</button>
+</form>
 
         <div id="contact-us" class="row mt-5">
             <div class="col-md-12 text-center">
@@ -718,114 +696,86 @@ input[type="date"]::after {
        /* =======================================
    منطق الإرسال مع تنبيه التحقق من الحقول
    ======================================= */
-const form = document.getElementById('baptismForm');
 
-if (form) {
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        
-        // 1. التحقق إذا كانت الحقول مكتملة وصحيحة
-        if (form.checkValidity() === false) {
-            event.stopPropagation();
-            form.classList.add('was-validated'); // إظهار الحدود الحمراء من بوتستراب
+// 2. منطق الإرسال المطور لـ Web3Forms
+const baptismForm = document.getElementById('baptismForm');
 
-            // 2. إظهار تنبيه SweetAlert احترافي
-            Swal.fire({
-                title: 'عذراً.. البيانات ناقصة',
-                text: 'يرجى التأكد من ملء جميع الحقول المطلوبة (*) بشكل صحيح قبل الإرسال.',
-                icon: 'warning',
-                confirmButtonText: 'فهمت، سأكملها',
-                confirmButtonColor: '#0d6efd',
-                customClass: {
-                    container: 'swal2-arabic-rtl'
-                }
-            });
-            
-            return; // توقف هنا ولا ترسل البيانات
-        } 
+if (baptismForm) {
+    baptismForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-        // إذا كانت الحقول سليمة، يكمل الكود بقية خطوات الإرسال...
-        const submitButton = form.querySelector('.submit-btn');
-        submitButton.disabled = true;
-        submitButton.textContent = 'جاري الإرسال... ⏳';
+        if (!baptismForm.checkValidity()) {
+            baptismForm.classList.add('was-validated');
+            Swal.fire({ title: 'تنبيه', text: 'يرجى إكمال جميع الحقول بدقة', icon: 'warning' });
+            return;
+        }
 
-        
-    
+        const btn = baptismForm.querySelector('.submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'جاري المعالجة...';
 
-        // سحب البيانات عبر الـ ID (لأننا حذفنا الـ name)
-        const requesterName = document.getElementById('requester-name').value;
-        const requesterPhone = document.getElementById('requester-id').value;
-        const providerName = document.getElementById('provider-name').value;
-        const providerPhone = document.getElementById('provider-id').value;
-        const amount = document.getElementById('servicePrice').value;
-        const total = document.getElementById('totalAmount').textContent;
-        const details = document.getElementById('agreement-details').value;
-        const endDate = document.getElementById('theDayTheBaptismEnded').value;
+        // تجميع البيانات للتقرير الرسمي
+        const data = {
+            requester: document.getElementById('requester-name').value,
+            reqPhone: document.getElementById('requester-id').value,
+            provider: document.getElementById('provider-name').value,
+            proPhone: document.getElementById('provider-id').value,
+            price: document.getElementById('servicePrice').value,
+            total: document.getElementById('totalAmount').textContent,
+            expiry: document.getElementById('theDayTheBaptismEnded').value,
+            details: document.getElementById('agreement-details').value,
+            payment: baptismForm.querySelector('input[name="pay_method"]:checked').value
+        };
 
-        // تنسيق التقرير النهائي (استخدام رموز خاصة لإجبار المحاذاة)
-        const formattedReport = `
-        
-        
-        📌 طـلـب تـعـمـيـد جـديـد - مـنـصـة تـعـمـيـد
-        
-        
-       
+        // بناء نص التقرير بشكل "رسمي" يظهر بوضوح في الإيميل
+        const reportBody = `
 
-        
-       •  اسـم مقدم الطلب:  ${requesterName}
-       
-       •  جـوال مقدم الطلب:  ${requesterPhone}
-       
-       •  اسـم مقدم الخدمة:  ${providerName}
-       
-       •  جـوال مقدم الخدمة:  ${providerPhone}
-       
-       •  مبلغ التعميد:  ${amount} ريال
-       
-       •  الإجمالي مع الرسوم:  ${total} ريال
-       
-       •  تاريخ الانتهاء:  ${endDate}
-       
-       •  نص الاتفاق:  ${details}
+      تــقــريــر طلـب تـعمـيد من منصة تعميد     
 
-        
-              
-        🇸🇦 تم الإرسال رسمياً من منصة تعميد
-        
-        
-        
+
+• اسم صـاحب الـطلب: ${data.requester}
+• جـوال صاحب الـطلب: ${data.reqPhone}
+• اسم مـقدم الـخدمة: ${data.provider}
+• جـوال مقدم الـخدمة: ${data.proPhone}
+• مـبـلـغ الـتـعـمـيـد: ${data.price} ريال
+• الإجـمـالـي بالرسوم: ${data.total} ريال
+• طـريـقـة الـدفـع: ${data.payment}
+• تـاريـخ الانـتـهـاء: ${data.expiry}
+• نـص الاتـفـاق: "${data.details}"
+
+
+تم الإرسال عبر البوابة الرسمية لمنصة تعميد
         `;
 
-        // وضع التقرير في الحقل الوحيد الذي يراه Formspree
-        document.getElementById('formattedMessage').value = formattedReport;
+        // إرسال التقرير النهائي فقط لتجنب النصوص الملونة المزعجة
+        const finalFormData = new FormData();
+        finalFormData.append("access_key", "c4a88d20-5588-4b2d-b6b5-80f5897683b5");
+        finalFormData.append("subject", "طلب تعميد جديد: " + data.requester);
+        finalFormData.append("from_name", "منصة تعميد");
+        finalFormData.append("Report_Details", reportBody); // اسم الحقل إنجليزي لمنع التشفير
 
-        // إرسال التقرير فقط
-        const formData = new FormData();
-        formData.append('التقرير_النهائي', formattedReport);
-
-        fetch(form.getAttribute('action'), {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: finalFormData
         })
-        .then(response => {
-            if (response.ok) {
+        .then(res => {
+            if (res.ok) {
                 Swal.fire({
                     title: 'تم الإرسال بنجاح',
-                    icon: 'success',
-                    timer: 5000,
-                    customClass: { container: 'swal2-arabic-rtl' }
+                    text: 'وصل طلبك للإدارة، وسيتم التواصل معكم عبر الواتساب.',
+                    icon: 'success'
                 });
-                form.reset();
-                form.classList.remove('was-validated');
+                baptismForm.reset();
                 document.getElementById('platformFee').textContent = '0';
                 document.getElementById('totalAmount').textContent = '0';
+            } else {
+                Swal.fire('خطأ', 'حدثت مشكلة في السيرفر، يرجى المحاولة لاحقاً', 'error');
             }
         })
-        .catch(() => alert('حدث خطأ في الاتصال'))
+        .catch(() => Swal.fire('خطأ', 'تأكد من اتصال الإنترنت', 'error'))
         .finally(() => {
-            submitButton.disabled = false;
-            submitButton.textContent = 'إتمام فتح التعميد عبر الإيميل';
+            btn.disabled = false;
+            btn.textContent = 'إرسال الطلب رسمياً';
         });
     });
 }
